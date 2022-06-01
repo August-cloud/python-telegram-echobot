@@ -20,7 +20,7 @@ def help(update: Update, context: CallbackContext):
     /instagram - To get the instagram URL
     /website - To get the URL for our website
     /gmail - Send us email
-    /meeting days  - To get the endtime warriors telegram link""")
+    /meetings  - To get the endtime warriors telegram link""")
   
     
 def gmail_url(update: Update, context: CallbackContext):
@@ -38,7 +38,7 @@ def website_url(update: Update, context: CallbackContext):
         "Website still in development")
   
   
-def meetings_url(update: Update, context: CallbackContext):
+def meetings(update: Update, context: CallbackContext):
     update.message.reply_text(
         "Link to telegram group: https://t.me/endtimewarriorsprayergrp or Subscribe to our channel: https://t.me/endtimewarriors4\
             /Meeting Days ====== > Wednesdays: Prophetic Service @ 7pm\
@@ -63,7 +63,7 @@ updater.dispatcher.add_handler(CommandHandler('instagram', instagram_url))
 updater.dispatcher.add_handler(CommandHandler('help', help))
 updater.dispatcher.add_handler(CommandHandler('website', website_url))
 updater.dispatcher.add_handler(CommandHandler('gmail', gmail_url))
-updater.dispatcher.add_handler(CommandHandler('meeting days', meetings_url))
+updater.dispatcher.add_handler(CommandHandler('meetings', meetings))
 updater.dispatcher.add_handler(MessageHandler(Filters.text, unknown))
 updater.dispatcher.add_handler(MessageHandler(
     Filters.command, unknown))  # Filters out unknown commands
